@@ -8,21 +8,30 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-
+import QueuePage from 'containers/QueuePage/Loadable';
 import GlobalStyle from '../../global-styles';
+
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: flex;
+`
 
 export default function App() {
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+    <Wrapper>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/queue" component={QueuePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Router>
       <GlobalStyle />
-    </div>
+    </Wrapper>
   );
 }

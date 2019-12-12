@@ -5,15 +5,11 @@
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'app.containers.HomePage';
+export const scope = 'app.containers.QueuePage';
 
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'BarbeQUEUE 2.0',
-  },
-  motto : {
-    id: `${scope}.motto`,
-    defaultMessage: 'Get barbequeued!'
+    defaultMessage: 'Queue',
   }
 });
